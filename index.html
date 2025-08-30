@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moja Strona</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Zegar */
+  #clock {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Przyciski społecznościowe */
+  .social-buttons {
+    position: fixed;
+    bottom: 10px;
+    right: 120px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-buttons a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #1DB954;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  /* Lewy dolny panel */
+  #left-panel {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+  }
+
+  #left-panel img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  #left-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #left-panel li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div id="left-panel">
+  <img src="twoje_zdjecie.jpg" alt="Twoje zdjęcie">
+  <ul>
+    <li>🎵 Piosenka 1</li>
+    <li>🎵 Piosenka 2</li>
+    <li>🎵 Piosenka 3</li>
+  </ul>
+</div>
+
+<div class="social-buttons">
+  <a href="https://open.spotify.com/" target="_blank">Spotify</a>
+  <a href="https://discord.com/" target="_blank">Discord</a>
+  <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+</div>
+
+<div id="clock"></div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    document.getElementById('clock').textContent = time;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+</body>
+</html>
 
